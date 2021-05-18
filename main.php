@@ -1819,9 +1819,9 @@ print_r("\n");
 // $array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
 
 // var_dump(array_intersect_ukey($array1, $array2, 'key_compare_func'));
-$tree = mkdir('etc', [
-  touch('bashrc'),
-  mkdir('consul', [
-    touch('config.json'),
-  ]),
-], ['key' => 'value']);
+// $tree = mkdir('etc', [
+//   touch('bashrc'),
+//   mkdir('consul', [
+//     touch('config.json'),
+//   ]),
+// ], ['key' => 'value']);
