@@ -1,1827 +1,899 @@
 <?php
-//Ассоциативный массив
-function getComposerFileData()
+//oop php
+class Point 
 {
-  $mass = [
-      "autoload" => [
-    "files" => [
-        "src/Arrays.php"
-    ],
-    "something" => [
-        "item",
-        "item2"
-    ]
-      ]
-    ];
-       
-    
-  return $mass;
+  public $x;
+  public $y;
 }
-print_r(getComposerFileData());
-print_r("\n");
-function normalize()
+$point = new Point;
+print_r($point->x = 1000);
+echo "<br>";
+class Circle
 {
-  $name = [
-    'name' => 'еструктурKJDFJFSзация',
-    'description' => 'кDCак удHDTивить коDJVлек'
-  ];
-  // $res = [];
-  // $str = '';
-  // $i = 0;
-  // $result = implode(' ', $name);
-  // while($i < strlen($result)) {
-  //   print_r($result['name']);
-  //   // $result[] = ucfirst(strtolower($result['name']));
-  //   $i++;
-  // }
-  // $res = ($name['name']);
-  // $re = mb_substr($res, 0, 1);
-  // print_r($re);
-
-  // print_r($result);
-//  $result = $name['name'];
-// $res = implode(' ', $result);
-// print_r("\n");
-// $result2 = $name['description'];
-// $get = 'djfnjDDRd';
-// print_r(ucfirst($res));
-// print_r("\n");
-// print_r(strtolower($result2));
-//mb_substr(), mb_strtoupper()
+	public $center;
+	public $radius;
 }
-print_r(normalize());
+$circle = new Circle;
+print_r($circle->center = 23);
+echo "<br>";
+$circle->radius = new Point;
+$circle->radius->x = 1000;
+print_r($circle->radius->x);
+echo "<br>";
 print_r("\n");
-// function addValueToArray(&$array, $value1, $value2)
-// {
-//     print_r($array[] = [$value1, $value2]);
-// }
-// print_r(addValueToArray($array, 'rte', 'xaxax'));
-
-// $filepath = '/path/to/index.php';
-// $fileinfo = getFileInfo($filepath);
-// // [
-// //     'extension' => 'php',
-// //     'filename' => 'index.php'
-// // ];
-print_r("\n");
-//Для начала нам нужно извлечь имя файла. Это можно сделать, используя метод explode().
-
-// Разделяем путь на промежуточные директории и файл
-// $pathParts = explode('/', $filepath);
-// // Извлекаем имя файла
-// // array_key_last() возвращает последний ключ массива
-// $filename = $pathParts[array_key_last($pathParts)]; 
-// //Затем, точно таким же способом, можно получить и расширение:
-
-// $nameParts = explode('.', $filename);
-
-// $extension = $nameParts[array_key_last($nameParts)];
-//Теперь, объединяя все вместе, реализуем нужную функцию:
-
-// function getFileInfo($filepath)
-// {
-//     $pathParts = explode('/', $filepath);
-//     $filename = $pathParts[array_key_last($pathParts)]; 
-//     $nameParts = explode('.', $filename);
-//     $extension = $nameParts[array_key_last($nameParts)];
-
-//     // В значения вместо переменных подставятся нужные значения
-//     $info = ['filename' => $filename, 'extension' => $extension];
-
-//     return $info;
-// }
-//В примере выше ассоциативный массив создается сразу, когда все данные уже готовы. Иногда делают по другому, инициализируют массив в самом начале и постепенно наполняют его данными:
-
-// function getFileInfo($filepath)
-// {
-//     // Инициализация массива
-//     $info = [];
-
-//     $pathParts = explode('/', $filepath);
-//     $filename = $pathParts[array_key_last($pathParts)]; 
-//     $info['filename'] = $filename;
-
-//     $nameParts = explode('.', $filename);
-//     $extension = $nameParts[array_key_last($nameParts)];
-//     $info['extension'] = $extension;
-
-//     return $info;
-// }
-// print_r(getFileInfo('/path/to/index.php'));
-print_r("\n");
-//Реализуйте функцию getDomainInfo(), которая принимает на вход имя сайта и возвращает информацию о нем:
-function countFruits($fruits)
+//Реализуйте функцию getMidpoint, которая принимает на вход две точки (объекты) и возвращает точку (объект) лежащую между ними (поиск середины отрезка).
+class Point1
 {
-  $result = [];
-
-  foreach ($fruits as $name) {
-    // Проверка на существование
-    if (array_key_exists($name, $result)) {
-      $result[$name] += 1;
-    } else {
-      $result[$name] = 1;
-    }
-  }
-
-  return $result;
-}
-print_r(countFruits($hggj = [
-    'apple', 'banana', 'pear',
-    'apricot', 'apple', 'banana',
-    'apple', 'orange', 'pear'
-]));
-print_r("\n");
-//Реализуйте функцию countWords(), которая считает количество слов в предложении и возвращает ассоциативный массив в котором ключи это слова (приведенные к нижнему регистру), а значения — это то сколько раз слово встретилось в предложении. Слова в предложении могут находиться в разных регистрах. Перед подсчетом их нужно приводить в нижний регистр, чтобы не пропускались дубли.
-function countWords($string)
-{
-  if (empty($string)) {
-    return [];
-  }
-  $res = explode(' ', $string);
-  $result = [];
-  foreach ($res as $mass) {
-    $a = strtolower($mass);
-    // print_r($a);
-    $result[$a] = strtolower($result[$a] ?? 0) + 1;
-  }
-  return $result;
-}
-print_r(countWords('how', 'one', 'how'));
-
-print_r("\n");
-function te($array, $val)
-{
-  $result = [];
-  foreach ($array as $key => $value) {
-    // $b = $key;
-    if ($value === $val) {
-      $result[] = $result ?? $key += 1;
-    }
-  
-}
-  return $result;
-}
-print_r(te(['1' => 'fdg', '2'=> '25', '3'=> 'ros'], '12'));
-//Реализуйте функцию pick, которая извлекает из переданного массива все элементы по указанным ключам и возвращает новый массив. Аргументы:
-//Массив ключей, по которым должны быть выбраны элементы (ключ и значение) из исходного массива, и на основе выбранных данных сформирован новый массив
-function pick(array $arr1, array $key)
-{
-  $result = [];
-  // $count = $arr1;
-  foreach ($arr1 as $key1 => $value) {
-    // print_r("$key1 => $value");
-    foreach ($key as $val) {
-      if ($val === $key1) {
-        $result[] = ("$key1 => $value");
-      }
-    }
-  }
-    return $result;
-}
-print_r(pick([
-    'user' => 'ubuntu',
-    'cores' => 4,
-    'os' => 'linux',
-    'null' => null
-], ['user', 'os', 'null', [], ]));
-print_r("\n");
-//решения учителя
-function pic(array $arr1, array $key2)
-{
-  
-  $result = [];
-  foreach ($key2 as $key) {
-   if (array_key_exists($key, $arr1)) {
-     $result[$key] = $arr1[$key];
-   }
-   return $result;
-  }
-}
-print_r(pic([
-    'user' => 'ubuntu',
-    'cores' => 4,
-    'os' => 'linux',
-    'null' => null
-], ['user', 'null']));
-
-print_r("\n");
-$array = ['lena' => 25, 'pety' => 12, 'roza' => 'casha'];
-print_r($array['roza']);
-print_r("\n");
-$a['friends'] = ['nan', 'sash', 25];
-print_r($a['friends'][2]);
-print_r("\n");
-$s['key'] = [
-  ['1' => 'one', '2' => 'two'],
-  ['3' => 'three', '4' => 'foo']
-];
-print_r($s['key'][1]['4']);
-print_r("\n");
-$key = 'key';
-print_r($s[$key][0]);
-//Реализуйте функцию getIn, которая извлекает из массива (который может быть любой глубины вложенности) значение по указанным ключам. Аргументы:
-//Исходный массив
-//Массив ключей, по которым ведется поиск значения
-//В случае, когда добраться до значения невозможно, возвращается null.
-function getIn(array $arr1, array $key)
-{
-  $result = [];
-  if (array_key_exists('user', $arr1)) {
-    $result = $arr1['user'];
-    if (array_key_exists('hosts', $result)) {
-        $result = $result['hosts'];
-        if (array_key_exists(0, $result)) {
-            $result = $result[0];
-            if (array_key_exists('name', $result)) {
-              $result = $result['name'];
-              if (array_key_exists(1, $result)) {
-                $result = $result[1];
-                if (array_key_exists('name', $result)) {
-                  $result = $result['name'];
-                  if (array_key_exists(null, $result)) {
-                    $result = $result[null];
-                    if (array_key_exists('active', $result)) {
-                    $result = $result['active'];
-                  }
-                } 
-              }
-            }
-        }
-    }
-}
-}
-return $result;
-}
-print_r(getIn([
-    'user' => 'ubuntu',
-    'hosts' => [
-        ['name' => 'web1'],
-        ['name' => 'web2', null => 3, 'active' => false]
-    ]
-], ['hosts', 0]));
-//array_keys
-//in_array
-print_r("\n");
-function ge(array $arr1, array $key)
-{
-  $curr = $arr1;
- foreach ($key as $keys) {
-   if (!is_array($curr) || !array_key_exists($keys, $curr)) {
-     return null;
-   }
-   $curr = $curr[$keys];
- }
-   return $curr;
-}
-print_r(ge([
-    'user' => 'ubuntu',
-    'hosts' => [
-        ['name' => 'web1'],
-        ['name' => 'web2', null => 3, 'active' => false]
-    ]
-], [1]));
-print_r("\n");
-$data = ['first_name' => 'щзф', 'last_name' => 'саша'];
-
-$values = array_values($data);print_r($values);
-// ['Mark', 'Smith']
-$one = ['lena' => 'fa', 'sasha' => '25'];
-$two = array_keys($one);
-print_r($two);
-//Реализуйте функцию genDiff, которая сравнивает два ассоциативных массива и возвращает результат сравнения в виде ассоциативного массива. Ключами результирующего массива будут все ключи из двух входящих массивов, а значением строка с описанием отличий => added, deleted, changed или unchanged.
-//added — ключ отсутствовал в первом массиве, но был добавлен во второй
-//deleted — ключ был в первом массиве, но отсутствует во втором
-//changed — ключ присутствовал и в первом и во втором массиве, но значения отличаются
-//unchanged — ключ присутствовал и в первом и во втором массиве с одинаковыми значениями
-function genDiff(array $arr1, array $arr2)
-{
-  $result = [];
-  $a = array_merge($arr1, $arr2);
-  // $result = $a;
-  foreach ($a as $key => $val) {
-    // print_r([$val]);
-    if (array_key_exists($key, $arr1) && !array_key_exists($key, $arr2)) {
-      $result[$key] = 'deleted';
-    }
-    if (!array_key_exists($key, $arr1) && array_key_exists($key, $arr2)) {
-      $result[$key] = 'added';
-    }
-    if (array_key_exists($key, $arr1) && array_key_exists($key, $arr2) && $arr1[$key] !== $arr2[$key]) {
-      $result[$key] = 'changed';
-    }
-    if (array_key_exists($key, $arr1) && array_key_exists($key, $arr2) && $arr1[$key] === $arr2[$key]) {
-      $result[$key] = 'unchanged';
-    }
-}
-return $result;
-}
-print_r(genDiff(
-    ['one' => 'eon', 'two' => 'two', 'four' => '1', 'one' => 'eon'],
-    ['two' => 'own', 'zero' => 4, 'four' => '1', 'one' => 'eon']
-));
-// 'one' => 'deleted',
-//   'two' => 'changed',
-//   'four' => 'unchanged',
-//   'zero' => 'added',
-print_r("\n");
-// $data = [['one' => 'eon', 'two' => 'two', 'four' => true],
-//     ['two' => 'own', 'zero' => 4, 'four' => true]];
-//     $a = array_merge($data[0], $data[1]);
-//     print_r($a);
-print_r("\n");
-//     $a = new \Ds\Map(["a" => 1, "b" => 2, "c" => 3]);
-// $b = new \Ds\Map(["b" => 3, "c" => 4, "d" => 5]);
-
-// print_r($a->union($b));
-// echo "fsjdfn";
-// if (isset(data['key']))
-//   echo 'Exists';
-print_r("\n");
-  // $keys = union(array_keys($data1), array_keys($data2)); print_r($keys);
-   // решения учителяfunction genDiff(array $data1, array $data2)
-  function tessst(array $data1, array $data2)
-{
-    $keys = array_merge(array_keys($data1), array_keys($data2)); // https://youtu.be/vkUTX1hruF8?t=929
-    $result = [];
-    foreach ($keys as $key) {
-        // https://ru.hexlet.io/courses/php-associative-arrays/lessons/syntax/theory_unit
-        if (!array_key_exists($key, $data1)) {
-            $result[$key] = 'added';
-        } elseif (!array_key_exists($key, $data2)) {
-            $result[$key] = 'deleted';
-        } elseif ($data1[$key] !== $data2[$key]) {
-            $result[$key] = 'changed';
-        } else {
-            $result[$key] = 'unchanged';
-        }
-    }
- 
-    return $result;
-}
-print_r(tessst(
-    ['one' => 'eon', 'two' => 'two', 'four' => '1', 'one' => 'eon'],
-    ['two' => 'own', 'zero' => 4, 'four' => '1', 'one' => 'eon']
-));
-$persons = [
-    ['first' => 'Rasmus', 'last' => 'Lerdorf'],
-    ['first' => 'Fabien', 'last' => 'Potencier'],
-    ['first' => 'Taylor', 'last' => 'Otwell']
-];
-['first' => $first] = $persons[0];
-['first' => $first] = $persons[1];
-['first' => $first] = $persons[2];
-print_r($first);
-
-// foreach ($persons as ['first' => $firstname, 'last' => $lastname]) {
-//     var_dump($firstname, $lastname);
-// }
-//Реализуйте функцию getSortedNames, которая принимает на вход список пользователей, извлекает их имена, сортирует и возвращает отсортированный список имен.
-print_r("\n");
-function getSortedNames($array)
-{
-  // 'name' = $name;
-//  $a = array_keys($array);
-//  print_r($a);
-$result = [];
-  foreach ($array as ['name' => $name]) {
-    $result[] = $name;
-  }
-  sort($result);
-    return $result;
-}
- 
-print_r(getSortedNames([
-    ['name' => 'Bronn', 'gender' => 'male', 'birthday' => '1973-03-23'],
-    ['name' => 'Reigar', 'gender' => 'male', 'birthday' => '1973-11-03'],
-    ['name' => 'Eiegon',  'gender' => 'male', 'birthday' => '1963-11-03'],
-    ['name' => 'Sansa', 'gender' => 'female', 'birthday' => '2012-11-03']
-]));
- 
-// getSortedNames($users); // ['Bronn', 'Eiegon', 'Reigar', 'Sansa']
-//По сути в этом задании надо реализовать ассоциативный массив. По понятным причинам использовать ассоциативные массивы для их создания нельзя. Представьте что в языке ассоциативных массивов нет и мы их хотим добавить.
-//make() — создаёт новый словарь
-//set($map, $key, $value) — устанавливает в словарь значение по ключу. Работает и для создания и для изменения. Функция возвращает true, если удалось установить значение. При возникновении коллизии, функция никак не меняет словарь и возвращает false.
-//get($map, $key, $defaultValue = null) — читает в словаре значение по ключу и возвращает его. Параметр $defaultValue — значение, которое функция возвращает, если в словаре нет ключа (по умолчанию равно null). При возникновении коллизии функция также возвращает значение по умолчанию.
-//Функции set() и get() принимают первым параметром словарь. Передача идет по ссылке, поэтому set() может изменить его напрямую.
-//Для полноценного погружения в тему, считаем, что массив в PHP может использоваться только как индексированный массив.
-print_r("\n");
-function hashkey($key)
-{
-  $hash = crc32($key) % 1000;
-  return $hash;
-}
-function make() {
-  return [];
-}
-function colizii($map, $key)
-{
-  $index = hashkey($key);
-  [$current] = $map[$index];
-  // если хешированный ключ не равен ключу, эта коллизия
-  return [$current] !== $key;
-}
-function set(&$map, $key, $value) 
-{
-  $index = hashkey($key);
-  if (isset($map[$key]) && colizii($map, $key)) {
-    return false;
-  }
-  // устанавливает в словарь значение по ключу
-  $map[$key] = [$key, $value];
-  return true;
-}
-function get(&$map, $key, $defaultValue = null)
-{
-  // хешированный ключ
-  $index = hashkey($key);
-  // если в словаре нет ключа или при возникновении коллизии возвращает null
-  if (!isset($map[$key]) || colizii($map, $key)) {
-    return $defaultValue;
-  }
-  //читает в словаре значение по ключу и возвращает его
-  [, $value] = $map[$key];
-  return $value;
-}
-// Для простоты показано на PHP, хотя в реальности всё это происходит на более низком уровне.
-
-// Создание ассоциативного массива приводит к инициализации 
-// индексированного массива внутри интерпретатора.
-$internal = [];
-
-// Во время присвоения значения `$data['key'] = 'value'`
-// интерпретатор выполняет несколько действий:
-
-// 1. Хеширует ключ. Результатом хеширования становится число.
-$hash = crc32('key');
-// 2. Число, полученное на предыдущем шаге преобразуется в индекс массива.
-$index = $hash % 1000;
-// В значение внутреннего индексированного массива, по найденному индексу,
-// записывается ещё один массив, первым элементом которого становится ключ `'key'`,
-// а вторым значение `'value'`.
-function mak()
-{
-  $map = [];
-
-  return $map;
-}
-print_r(mak([]));
-print_r("\n");
-function se(&$map, $key, $value)
-{
-  
-  $map[$key] = $value;
-  $hash = crc32($key);
-  $index = $hash % 1000;
-  $internal[$index] = [$key, $value];
-  if ($internal[$index]) {
-    return true;
-  } else {
-    return false;
-  }
-  // if ($hash === $hash) {
-  //   return false;
-  // }
-}
-print_r(se($map,'name', 'value'));
-print_r("\n");
-function ge111(&$map, $key, $defaultValue = null)
-{
- 
-  if(!array_key_exists($key, $map)) {
-    return $defaultValue;
-  } 
-  //  se($map, $key, $value);
-  //  $map[$key] = $value;
-  //  return $value;
-}
-print_r(ge111($map, 'name'));
-print_r("\n");
-// $internal[$index] = ['key', 'value'];
-// print_r("\n");
-
-// $hash = crc32('fdjgkfoskf,psv');
-// $index = $hash % 1000;
-// $internal[$index] = ['key', 'value'];
-// print_r($internal[$index]);
-
-//Реализуйте функцию buildQueryString, которая принимает на вход список параметров и возвращает сформированный query string из этих параметров:
-function buildQueryString(array $assoc)
-{
-  $result = [];
-  $str = '';
-  ksort($assoc);
-  foreach ($assoc as $key => $value) {
-    $result[] = "$key=$value";
-    $str = implode('&', $result);
-  //  ksort($result);
-  }
-  return $str;
-}
-print_r(buildQueryString(['per' => 10, 'page' => 1 ]));
-//page=1&per=10 ksort
-print_r("\n");
-function isAssoc(array $items)
-{
-    if ($items === []) return false;
-    return array_keys($items) !== range(0, count($items) - 1);
-}
-
-print_r(isAssoc([1, 2, 5, 8], // false
-['1' => 'a', '0' => 'b', '2' => 'c'])); // true
-print_r("\n");
-//Реализуйте функцию get, которая извлекает из массива элемент по указанному индексу, если индекс существует, либо возвращает значение по умолчанию. Функция принимает на вход три аргумента:
-//Массив
-//Индекс
-//Значение по умолчанию (равно null)
-function test56(array $array, int $index, $value = null)
-{
-  if (array_key_exists($index, $array)) {
-    return $array[$index];
-  } else {
-    return $array[$index] ?? $value;
-  }
+  public $x;
+  public $y;
 
 }
-print_r(test56(['moscow', 'london', 'berlin', 'porto', null], 10, 'dfdgvfd'));
-//Реализуйте функцию swap, которая меняет местами два элемента относительно переданного индекса. Например, если передан индекс 5, то функция меняет местами элементы, находящиеся по индексам 4 и 6.
-//Массив
-//Индекс
-//Если хотя бы одного из индексов не существует, функция возвращает исходный массив.
-print_r("\n");
-function sw(array $array, int $index)
-{
-  $index1 = $index - 1;
-  $index2 = $index + 1;
-  $w = array_key_exists($index1, $array) && array_key_exists($index2, $array);
-  if ($w) {
-    $temp = $array[$index1];
-    $array[$index1] = $array[$index2];
-    $array[$index2] = $temp;
-  }
-  return $array;
+function getMidpoint() {
+  $poin1 = new Point1;
+  $poin1->x = 0;
+  $poin1->y = 0;
+  $poin2 = new Point1;
+  $poin2->x = 4;
+  $poin2->y = -2;
+  print_r($poin1->x + $poin2->x) / 2;
+  print_r($poin1->y + $poin2->y) / 2;
+  // return $one . $two;
 }
-print_r(sw(['john', 'smith', 'karl', 'vfvfd', '25', '100'], 1));
-print_r("\n");
-function swa(array $array, $index)
-{
-    $PrevIndex = $index - 1;
-    $NewIndex = $index + 1;
-    $IsWaiable = array_key_exists($PrevIndex, $array) && array_key_exists($NewIndex, $array);
-    if ($IsWaiable) {
-        $temp = $array[$PrevIndex];
-        $array[$PrevIndex] = $array[$NewIndex];
-        $array[$NewIndex] = $temp;
-    }
-    return $array;
-}
-print_r(swa(['john', 'smith', 'karl', 'vfvfd', '25', '100'], 1));
-//Реализуйте функцию isContinuousSequence, которая проверяет, является ли переданная последовательность целых чисел возрастающей непрерывно (не имеющей пропусков чисел). Например, последовательность [4, 5, 6, 7] — непрерывная, а [0, 1, 3] — нет. Последовательность может начинаться с любого числа, главное условие — отсутствие пропусков чисел. Последовательность из одного числа не может считаться возрастающей.
-function isConti($mass)
-{
-  if (count($mass) <= 1) {
-    return false;
-  }
- $start = $mass[0];
-  foreach ($mass as $key => $itog) {
-    // print_r($start);
-    if ($start + $key !== $itog) {
-      return false;
-    }
-  }
-  return true;
-}
-print_r(isConti([10]));
-print_r("\n");
-//поиск минимального максимального
-function age($mass)
-{
-  $max = $mass[0];
-  foreach ($mass as $numeric) {
-    if ($numeric > $max) {
-      $max = $numeric;
-    }
-  }
-  return $max;
-}
-print_r(age([2, 1, 2, 5, 10]));
-// поиск среднего
-//Реализуйте функцию calculateAverage(), которая высчитывает среднее арифметическое элементов массива. Благодаря этой функции мы наконец-то посчитаем среднюю температуру по больнице. :)
-print_r("\n");
-function calsu($ma)
-{
-  $sum = 0;
-  for ($i = 0; $i < count($ma); $i++) {
-    // print_r("$ma[$i] ");
-    if ($ma[$i] > 0) {
-      $sum += $ma[$i];
-      // print_r($sum);
-      //сумму всех элементов в массиве поделим на длины массива
-      //выходит средний арифметический
-      $result = $sum / count($ma);
-    }
-  }
-  // return $result;
-}
-print_r(calsu([37.5, 34, 39.3, 40, 38.7, 41.5]));
-print_r("\n");
-//Реализуйте функцию fromPairs, которая принимает на вход массив, состоящий из массивов-пар, и возвращает ассоциативный массив, полученный из этих пар.
-//Примечания
-//Если при конструировании объекта попадаются совпадающие ключи, то берётся значение из последнего массива-пары:
-function fromPairs(array $array)
-{
-  $result = [];
-  foreach ($array as $key => $as) {
-    $result[$as[0]] = $as[1];
-  }
-  return $result;
-}
-print_r(fromPairs([['cat', 5], ['dog', 6], ['cat', 11]]));
-//['cat' => 11, 'dog' => 6]
-print_r("\n");
-//Если при конструировании объекта попадаются совпадающие ключи, то берётся значение из последнего массива-пары:
-// $array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-// // if (array_keys($array) === array_keys($array)) {
-// //   echo
-// // }
-// foreach (range(0, 2, 12) as $number) {
-//     echo $number;
-// }
-//if ($array === []) return false;
-    //$res = array_keys($array) !== range(0, count($array) - 1);
-    //решения учителя
-  function fromPair(array $data)
-{
-    $result = [];
-    //чтобы обьединить массивы в ассоциативный массив используется внутри foreach квадратные скобочки []
-    foreach ($data as [$key, $value]) {
-      $result[$key] = $value;
-    }
- 
-    return $result;
-}
-print_r(fromPair([['cat', 5], ['dog', 6], ['cat', 11]]));
-print_r("\n");
-//Реализуйте функцию findWhere, которая принимает на вход массив (элементы которого - ассоциативные массивы) и пары ключ-значение (тоже в виде массива), а возвращает первый элемент исходного массива, значения которого соответствуют переданным парам (всем переданным). Если совпадений не было, то функция должна вернуть null.
-function findWhere(array $arr, $arr2)
-{
-  // $array2 = array_intersect_key($arr2, $arr);
-  // print_r($array2);
-  $result = [];
-  foreach ($arr as $key1 => $value1) {
-    // print_r($value1);
-   foreach ($arr2 as $key2 => $value2) {
-    if (in_array($value1, $arr) === in_array($value2, $arr2)) {
-      $result[$key1] = $value1;
-    }
-   }
-  }
-  return $result;
-}
-print_r(findWhere([
-        ['title' => 'Book of Fooos', 'author' => 'FooBar', 'year' => 1111],
-        ['title' => 'Cymbeline', 'author' => 'Shakespeare', 'year' => 1611],
-        ['title' => 'The Tempest', 'author' => 'Shakespeare', 'year' => 1611],
-        ['title' => 'Book of Foos Barrrs', 'author' => 'FooBar', 'year' => 2222],
-        ['title' => 'Still foooing', 'author' => 'FooBar', 'year' => 3333],
-        ['title' => 'Happy Foo', 'author' => 'FooBar', 'year' => 4444],
-    ],
-    ['author' => 'Shakespeare', 'year' => 1611]));
+print_r(getMidpoint());//2 -1
 
-    //array_intersect_assoc
-    //array_searcharray_search
-print_r("\n");
-    function toRna($dna)
-{
-    $dnaArray = str_split($dna);
-    // print_r($dnaArray);
-    for($i = 0; $i < sizeof($dnaArray); $i++)
-    {
-        if($dnaArray[$i] === 'G'){
-           $dnaArray[$i] = 'C'; }
-        elseif($dnaArray[$i] === 'C'){
-           $dnaArray[$i] = 'G'; }
-        elseif($dnaArray[$i] === 'T'){
-           $dnaArray[$i] = 'A'; }
-        elseif($dnaArray[$i] === 'A'){
-           $dnaArray[$i] = 'U';}
-          //  elseif($dnaArray[$i] === 'A'){
-          //  $dnaArray[$i] = 'U';}
-    }
-    return implode("", $dnaArray);
-}
-print_r(toRna('ACGTGGTCTTAA')); //UGCACCAGAAUU
-// G -> C
-// C -> G
-// T -> A
-// A -> U
-print_r("\n");
-function to($dna)
-{
-    $map = [
-      'G' => 'C',
-      'C' => 'G',
-      'T' => 'A',
-      'A' => 'U',
-      ];
-      $result = [];
-      for ($i = 0; $i < strlen($dna); $i++) {
-        $result[] = $map[$dna[$i]];
-      }
-      return implode('', $result);
-}
-print_r(to('ACGTGGTCTTAA')); //UGCACCAGAAUU
-//Реализуйте функцию toRoman(), которая переводит арабские числа в римские. Функция принимает на вход целое число в диапазоне от 1 до 3000, а возвращает строку с римским представлением этого числа.
-print_r("\n");
-function toRoman($num) 
-{
-  $mass = ['I' => 1, 'V' => 5, 'X' => 10, 'L' => 50, 'C' => 100, 'D' => 500, 'M' => 1000];
-  $result = [];
-  $sum = 0;
- foreach ($mass as $key => $values) {
-  //  print_r($key);
-  //  if ($num === $values) {
-  //    $result[] = $key;
-  //  }
-  // $a = $num / 2 + $values;
-  // print_r("$a ");
-  if ($num > $values) {
-    $sum += $values === $num;
-    $result[$sum] = $key;      
-  }
-    
- }
- return $result;
-}
-print_r(toRoman(25));
-//I = 1; V = 5; X = 10; L = 50; C = 100; D = 500; M = 1000.
-//Реализуйте функцию scrabble, которая принимает на вход два параметра: набор символов (строку) и слово, и проверяет, можно ли из переданного набора составить это слово. В результате вызова функция возвращает true или false.
-//При проверке учитывается количество символов, нужных для составления слова, и не учитывается их регистр.
-print_r("\n");
-function scrabble($simvol, $text)
-{
-    $a = str_split(strtolower($simvol));
-    //  print_r($simvol);
-    $b = str_split(strtolower($text));
-    foreach ($a as $key1 => $value1) {
-      //  print_r($value1);
-    foreach ($b as $key2 => $value2) {
-      if (in_array($value2, $a)) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-}
-print_r(scrabble('avj', 'java'));
-//array_key_exists()
-//array_search
-//array_search
-//array_values
-//'rkqodlw', 'world'
-//'avj', 'java'
+// $midpoint = getMidpoint($poin1, $poin2);
+// print_r($midpoint);
+// print_r($poin1);
+// print_r($poin2);
 
-//Реализуйте функцию combine(), которая объединяет несколько словарей (ассоциативных массивов) в один общий словарь. Функция принимает на вход массив массивов и возвращает результат в виде ассоциативного массива, в котором каждый ключ содержит список уникальных значений в виде массива. Элементы в списке располагаются в том порядке, в котором они появляются во входящих словарях.
-print_r("\n");
-function combine(array $array)
-{
-  $result = [];
-//  foreach ($array as ['a' => $value]) {
-//   if ('a') {
-//     $result['a'] = [$value];
+//  function getMidpoint($poin1, $poin2) {
+//     
 //   }
- 
- return $result;
-}
-print_r(combine([
-    [ 'a' => 1, 'b' => 2, 'c' => 3 ],
-    [],
-    [ 'a' => 3, 'b' => 2, 'd' => 5],
-    [ 'a' => 6 ],
-    [ 'b' => 4, 'c' => 3, 'd' => 2 ],
-    [ 'e' => 9 ],
-]));
-////     'a' => [1, 3, 6],
-//     'b' => [2, 4],
-//     'c' => [3],
-//     'd' => [5, 2],
-//     'e' => [9],
-//Реализуйте функцию getChunked, которая принимает на вход массив и число, задающее размер чанка (куска). Функция должна вернуть массив, состоящий из чанков указанной размерности.
+//  $p1 = new Point();
 print_r("\n");
-function getChunked($mass, $num)
-{
-  $result = [];
-for ($i = 0, $lench = count($mass); $i < $lench; $i += $num) {
-  $result[] = array_slice($mass, $i, $num);
-}
-return $result;
-}
-print_r(getChunked(['a', 'b', 'c', 'd'], 2));
-// → [['a', 'b'], ['c', 'd']]))
-//array_chunk
-print_r("\n");
-//Реализуйте функцию calcInPolishNotation, которая принимает массив, каждый элемент которого содержит число или знак операции (+, -, *, /). Функция должна вернуть результат вычисления по обратной польской записи. Если в какой-то момент происходит деление на ноль, функция должна вернуть значение null.
-function calcInPolishNotation()
-{
-}
-print_r(calcInPolishNotation([1, 2, '+', 4, '*', 3, '+']));
-print_r("\n");
-function testnum($num)
-{
- for ($i = 2; $i <= $num / 2; $i++) {
-  return true;
- } 
-  
-  //  $a = $num / $num;
-  //  print_r($a);
-}
-print_r(testnum(5));
+// $p1->x = 3;
+// $p1->y = 5;
+// // p1 и p2 содержат указатель на один и тот же объект
+// $p2 = $p1;
 
+// $p2->x = 100;
+// print_r($p1->x);  
 print_r("\n");
-   function check($num)
-     {
-       if ($num < 2) {
-         return false;
-       }
-        for ($i = 2; $i <= $num / 2; $i++)
-        {
-            if ($num % $i == 0) {
-                return false;   
-            }     
-        }
-        return true;
-     }
-     function Isprime($num) {
-       
-        if (check($num)) {
-          echo 'yes';
-        } else {
-          echo 'no';
-        }
-     }
-                   
-     print_r(Isprime(9));
-     print_r("\n");
-     //Реализуйте функцию average, которая возвращает среднее арифметическое всех переданных аргументов. Если функции не передать ни одного аргумента, то она должна вернуть null.
-     function average(...$mass)
-     {
-        $sum = 0;
-        $result = '';
-          for($i=0;$i<count($mass);$i++){
-            $sum += $mass[$i];
-            $result = $sum / count($mass);
-      } 
-      return $result;
-     }
-     print_r(average(-3, 4, 2, 10));
-    print_r("\n");
-//      function average(...$numbers)
-// {
-//     if (empty($numbers)) {
-//         return null;
-//     }
- 
-//     return (array_sum($numbers)) / (count($numbers));
+$a = 5;
+// Теперь $a и $b ссылаются на одни и те же данные
+$b = &$a;
+
+$a = 4;
+print_r($b); // => 4
+//Реализуйте функцию dup, которая клонирует переданную точку. Под клонированием подразумевается процесс создания нового объекта, с такими же данными как и у старого.
+// class Point {
+//   public $x;
+//   public $y;
 // }
-//Реализуйте функцию union(...$arrays), которая находит объединение всех переданных массивов. Функция принимает на вход от одного массива и больше. Ключи исходных массивов не сохраняются (т.е. все значения итогового массива заново индексируются: 0, 1, 2, ...).
-function union($first, ...$rest)
-{
-  // $a = array_merge($first, ...$rest);
-  // $b = array_unique($a);
-  // // print_r($b);
-  // $result = [];
-  $arrayfirst = array_unique(array_merge($first, ...$rest));
-  return array_values($arrayfirst);
-  // foreach ($b as $arr) {
-  //   $result[] = $arr;
-  // }
-  // return $result;
-}
-print_r(union([3, 2], [2, 2, 1])); // ['a', 3, false, true, 5, 8]
+// function dup($point)
+// {
+//   $cloned = new Point();
+//   $cloned->x = $point->x;
+//   $cloned->y = $point->y;
+//   return $cloned;
+// }
 print_r("\n");
-// print_r(Strings \ toLower ( 'ROD ELIAS' )); // стержень Элиас
-//Реализуйте функцию slugify самостоятельно, не прибегая к \Funct\Strings\slugify. Преобразования, которые она должна делать:
-//Приводить к нижнему регистру все символы в строке
-//Удалять все пробелы
-//Соединять слова с помощью дефисов
-function slugify(string $string)
+$p1 = new Point(3, 9);
+$p2 = new Point(3, 9);
+$p1 == $p2; // true
+print_r("\n");
+//Реализуйте функцию reverse, которая принимает на вход отрезок и возвращает новый отрезок с точками, добавленными в обратном порядке (begin меняется местами с end).
+//Точки в результирующем отрезке должны быть копиями (по значению) соответствующих точек исходного отрезка. То есть они не должны быть ссылкой на один и тот же объект, так как это разные объекты (пускай и с одинаковыми координатами).
+class Segment {
+    public $beginPoint;
+    public $endPoint;
+
+    public function __construct($beginPoint, $endPoint) {
+      $this->beginPoint = $beginPoint;
+      $this->endPoint = $endPoint;
+    }    
+}
+    function Test($segment)
+    {
+      //Обрашение к свойствам класса Segment;
+      $one = $segment->beginPoint;
+      $two = $segment->endPoint;
+      //Создание нового класса
+      $beginew = new Point($one->x, $two->y);
+      $endnew = new Point($two->x, $two->y);
+      return new Segment($endnew, $beginew);
+    }
+   $tes = new Segment(2, 4);
+  //  print_r($tes);
+  //  $fun = Test($tes);
+  //  print_r($fun);
+print_r("\n");
+  class Poi
 {
-  // $a = strtolower(str_replace(' ', '', $string));
-// $b = strtolower(preg_replace("/\s+/", "-",  $string));
-$a = explode(' ', $string);
-$b = compact($a);
+  public $x;
+  public $y;
+
+  public function __construct($x, $y) {
+    $this->x = $x;
+    $this->y = $y;
+  }
+
+  function getX() {
+    return $this->x;
+  }
+  function getY() {
+    return $this->y;
+  }
+  function setX($x) {
+    return $this->x = $x;
+  }
+  function setY($y) {
+    return $this->y = $y;
+  }
+}
+
+$point = new Poi(5, 10);
+$point->setX(100);
+print_r($point->getX()); // => 100
+//Реализуйте класс для работы с рациональными числами, включающий в себя следующие методы:
+//Конструктор — принимает на вход числитель и знаменатель.
+// Метод getNumer() — возвращает числитель
+// Метод getDenom() — возвращает знаменатель
+// Сложение add() — прибавляет переданную дробь к дроби на которой был вызван метод.
+// Вычитание sub() — находит разность между дробью на которой был вызван метод и переданной дробью.
+print_r("\n");
+class Rational {
+  public $getNumer;
+  public $getDenom;
+
+  public function __construct($getNumer, $getDenom) {
+    $this->getDenom = $getDenom;
+    $this->getNumer = $getNumer;
+  }
+  function getNumer() {
+    return $this->getNumer;
+  }
+  function getDenom() {
+    return $this->getDenom;
+  }
+  function add($real) {
+    
+    $sgl = ($this->getNumer() * $real->getDenom() + $this->getDenom() * $real->getNumer());
+    $two = ($real->getDenom() * $this->getDenom());
+    return new Rational($sgl, $two);
+  
+  }
+  function sub($real) {
+    $sgl = ($this->getNumer() * $real->getDenom() - $this->getDenom() * $real->getNumer());
+    $two = ($this->getDenom() * $real->getDenom());
+    return new Rational($sgl, $two);
+  }
+}
+$real1 = new Rational(10, 3);
+$real2 = new Rational(3, 9);
+// // print_r($real1);
+print_r($real2->add($real1));
+// print_r("\n");
+print_r($real2->sub($real1));
+print_r("\n");
+print_r("\n");
+class Po 
+{
+  public $int1;
+  public $int2;
+
+  public function __construct($int1, $int2) {
+    $this->int1 = $int1;
+    $this->int2 = $int2;
+  }
+  function pofun($po) {
+    $one = ($this->int1 * $po->int2 + $this->int2 * $po->int1);
+    $two = ($po->int1 * $po->int2);
+    return new PO($one, $two);
+  }
+}
+$po1 = new Po(3, 9);
+$po2 = new Po(10, 3);
+print_r($po1);
+// print_r($po1->pofun($po2));
+print_r("\n");
+print_r($po2->pofun($po1));
+//$this->getNumer() * $this->getDenom() + $this->getDenom() * $this->getDenom()//;
+//getNum($rational1) * getDen($rational2) + getNum($rational2) * getDen($rational1),
+    //getDen($rational1) * getDen($rational2)
+print_r("\n");
+//В задании необходимо реализовать пользователей которым можно добавлять адреса. Такое часто встречается в интернет магазинах, когда у одного пользователя может быть набор разных адресов для доставки. Пользователь и адрес представлены двумя классами:
+    class User
+{
+    private $addresses = [];
+    private $name;
+ 
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+ 
+    public function addAddress(User\Address $address)
+    {
+        $this->addresses[] = $address;
+    }
+ 
+    public function getAddresses()
+    {
+        return $this->addresses;
+    }
+ 
+    public function getName()
+    {
+        return $this->name;
+    }
+}
+print_r("\n");
+class Address
+{
+    private $country;
+    private $city;
+    private $street;
+ 
+    public function __construct($country, $city, $street)
+    {
+        $this->country = $country;
+        $this->city = $city;
+        $this->street = $street;
+    }
+ 
+    public function getCountry()
+    {
+        return $this->country;
+    }
+ 
+    public function getCity()
+    {
+        return $this->city;
+    }
+ 
+    public function getStreet()
+    {
+        return $this->street;
+    }
+ 
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+ 
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+ 
+    public function setStreet($street)
+    {
+        $this->street = $street;
+    }
+}
+
+print_r("\n");
+class P
+{
+    public $x;
+    public $y;
+
+    public function __construct($x, $y)
+    {
+        $this->x = $x;
+        $this->y = $y;
+    }
+
+    public function getX()
+    {
+        return $this->x;
+    }
+
+    public function getY()
+    {
+        return $this->y;
+    }
+
+    public function __toString()
+    {
+        return "({$this->x}, {$this->y})";
+    }
+}
+
+$point = new P(1, 10);
+
+// Автоматически вызывается __toString
+echo $point; // => (1, 10)
+
+// И тут
+$message = 'hello, ' . $point;
+print_r($message);
+// И тут
+$message2 = "hi, {$point}";
+print_r($message);
+print_r("\n");
+class T 
+{
+  public static $table = 'points';
+  public const TABLE = 20;
+
+  public static function tabLe() {
+    return self::$table = self::TABLE;
+  }
+}
+$t = new T();
+print_r(T::tabLe());
+
+print_r("\n");
+// class Time
+// {
+//     private $h;
+//     private $m;
+
+//     // BEGIN (write your solution here)
+//     // public static function fromString($string) {
+//     //   [$h, $m] = explode(':', $string);
+//     //     return new self($h, $m);
+//     // }
+//     // END
+
+//     public function __construct($h, $m)
+//     {
+//       // self::$h;
+//       // self::$m;
+//         $this->h = $h;
+//         $this->m = $m;
+//     }
+
+//     public function __toString()
+//     {
+//         return "{$this->h}:{$this->m}";
+//     }
+// }
+// $time = new Time();
+// print_r(Time::fromString());
+// print_r($time);
+
+print_r("\n");
+class N implements Countable {
+  public $items;
+
+  public function __construct($items = []) {
+    $this->items = $items;
+  }
+  public function count() {
+    return count($this->items);
+  }
+}
+$n = new N([5, 6, 7]);
+print_r($n);
+print_r($n->count());
+
+$a = "rozmarin";
+$b = json_decode($a, true);
 print_r($b);
-//  foreach ($a as $itog) {
-//    $result[] = $itog;
-//  }
-//  return implode('-', $result);
+print_r("\n");
+//src\Circle.php
+// Реализуйте класс Circle для описания кругов. У круга есть только одно свойство - его радиус. Реализуйте методы getArea и getCircumference, которые возвращают площадь и периметр круга соответственно.
+class Cir {
+  public $radius;
+
+  public function __construct($radius) {
+    $this->radius = $radius;
+  }
+  public function getArea($pi) {
+    return pi() * ($this->radius ** 2);
+  }
+  public function getCircumference($pi) {
+    return 2 * pi() * $this->radius;
+  }
 }
-print_r(slugify(' yOu   '));
-
+$c = new Cir(3);
+print_r($c);
+print_r($c->getArea(28.2));//0.1
 print_r("\n");
-$func = function () {
-  echo "For hands of gold are always cold. But a woman's hands are warm";
-};
-
-print_r($func());
-print_r("\n");
-function call(string $fn, $argument)
+print_r($c->getCircumference(18.8));//0.1
+//Реализуйте генератор рандомных чисел, представленный классом Random. Интерфейс объекта включает в себя три функции:
+//Конструктор. Принимает на вход seed, начальное число генератора псевдослучайных чисел
+//getNext — метод, возвращающий новое случайное число
+//reset — метод, сбрасывающий генератор на начальное значение
+class Random
 {
-    return $fn($argument);
+    private $seed;
+    private $nextNumber;
+    const a = 5;
+    const b = 3;
+    const c = 11;
+ 
+    public function __construct($seed) {
+        $this->nextNumber = $this->seed = $seed;
+    }
+ 
+    public function getNext() {
+        $this->nextNumber = (self::a * $this->nextNumber + self::b) % self::c;
+        return $this->nextNumber;
+    }
+ 
+    public function reset() {
+        $this->nextNumber = $this->seed;
+    }
 }
 
-$result = call('strlen', 'haskell is power!');
-print_r($result); // => 17
 print_r("\n");
-//Реализуйте анонимную функцию, которая принимает на вход строку и возвращает её последний символ (или null, если строка пустая). Запишите созданную функцию в переменную $last.
-$last = function(string $string) {
-  $str = '';
-  // while($i < strlen($string)) {
-    $str = substr($string, -1);
-    return $str;
-    if (empty($string)) return null;
-  // }
-};
-print_r($last('0'));
-print_r("\n");
-function run(string $text)
+class PasswordValidator
 {
     // BEGIN (write your solution here)
-    $last = function($text) {
-       substr($text, -1);
-        if ($text === '') return null;
-    };
+     private const PI = [
+        'minLength' => 8,
+        'containNumbers' => false
+    ];
+    
+    private $options;
+    
+    public function __construct(array $options = [])
+    {
+        $this->options = array_merge(self::PI, $options);
+        // print_r($this->options);
+    }
+    public function validate(string $password) : array
+    {
+        $error = [];
+        if (strlen($password) < $this->options['minLength']) {
+            $error['minLength'] = 'too small';
+        }
+        if ($this->options['containNumbers']) {
+            if (!$this->hasNumber($password)) {
+                $error['containNumbers'] = 'should contain at least one number';
+            }
+        }
+        return $error;
+    }  
     // END
 
-    return $last($text);
-}
-print_r($last('pow'));
-print_r("\n");
-//Реализуйте функцию takeOldest, которая принимает на вход список пользователей и возвращает самых взрослых. Количество возвращаемых пользователей задается вторым параметром, который по-умолчанию равен единице.
-function takeOldest ($array, $num = 1)
-{
-//   usort($array, fn($array1, $array2) => $array1['birthday'] <=> $array2['birthday']);
-
-// return firstN($array, $num);
- 
-  $cmp = function ($a, $b) {
-  if ($a['birthday'] === $b['birthday']) {
-    return 0;
-  }
-  return $a['birthday'] > $b['birthday'] ? 1 : -1;
-  // print_r($a['birthday']);
-};
-usort($array, $cmp);
-// Collection\firstN($array, $num); // => [1, 2]
-// return $array;
-}
-print_r(takeOldest([
-    ['name' => 'Tirion', 'birthday' => '1988-11-19'],
-    ['name' => 'Sam', 'birthday' => '1999-11-22'],
-    ['name' => 'Rob', 'birthday' => '1975-01-11'],
-    ['name' => 'Sansa', 'birthday' => '2001-03-20'],
-    ['name' => 'Tisha', 'birthday' => '1992-02-27']
-], 1));
-print_r("\n");
-// function myMap(callable $callback, $coll)
-// {
-//     $result = [];
-//     foreach ($coll as $item) {
-//         $result[] = $callback($item);
-//     }
-//     return $result;
-// }
-// print_r(myMap($callback, [5, 2, 3]));
-// print_r("\n");
-// $numbers = [5, 2, 3];
-
-// // возводим в квадрат каждое число
-// $newNumbers = array_map(fn($number) => $number ** 2, $numbers);
-// print_r($newNumbers); // => [25, 4, 9]
-  
-//Реализуйте функцию getChildren, которая принимает на вход список пользователей и возвращает плоский список их детей. Дети каждого пользователя хранятся в виде массива в ключе children
-print_r("\n");
-function getChildren(array $list)
-{
-  $result = [];
-  foreach ($list as $value) {
-    if ($value['children'] === 'Sam') {
-      $result[] = $value;
+    private function hasNumber(string $subject): bool
+    {
+        return strpbrk($subject, '1234567890') !== false;
     }
-  }
-  return $result;
 }
-print_r(getChildren([
-    ['name' => 'Tirion', 'children' => [
-        ['name' => 'Mira', 'birdhday' => '1983-03-23']
-    ]],
-    ['name' => 'Bronn', 'children' => []],
-    ['name' => 'Sam', 'children' => [
-        ['name' => 'Aria', 'birdhday' => '2012-11-03'],
-        ['name' => 'Keit', 'birdhday' => '1933-05-14']
-    ]],
-    ['name' => 'Rob', 'children' => [
-        ['name' => 'Tisha', 'birdhday' => '2012-11-03']
-    ]],
-]));
-
-//Реализуйте функцию getGirlFriends, которая принимает на вход список пользователей и возвращает плоский список подруг всех пользователей (без сохранения ключей). Друзья каждого пользователя хранятся в виде массива в ключе friends. Пол доступен по ключу gender и может принимать значения male или female.
+$p = new PasswordValidator();
+print_r($p->validate(5));
+//separator отвечает за символ(ы) добавляющиеся в конце, после обрезания строки, а length это длина до которой происходит сокращение. Если строка короче чем эта опция, то никакого сокращения не происходит. Конфигурацию по умолчанию можно переопределить передав новую в конструктор (она мержится с тем что в классе), а также через передачу конфигурации вторым параметром в метод truncate(). Оба этих способа можно комбинировать.
 print_r("\n");
-function getGirlFriends(array $arrays) 
+class Truncater
 {
-  $result = [];
-  foreach ($arrays as ['friends' => $friends]) {
-    foreach ($friends as $gender) {
-      if ($gender['gender'] === 'female') {
-        $result[] = $gender;
-      }
-    }
-  }
-  return $result;
-}
-print_r(getGirlFriends([
-    ['name' => 'Tirion', 'friends' => [
-        ['name' => 'Mira', 'gender' => 'female'],
-        ['name' => 'Ramsey', 'gender' => 'male']
-    ]],
-    ['name' => 'Bronn', 'friends' => []],
-    ['name' => 'Sam', 'friends' => [
-        ['name' => 'Aria', 'gender' => 'female'],
-        ['name' => 'Keit', 'gender' => 'female']
-    ]],
-    ['name' => 'Rob', 'friends' => [
-        ['name' => 'Taywin', 'gender' => 'male']
-    ]],
-]));
-print_r("\n");
-//Реализуйте функцию getMenCountByYear(), которая принимает на вход список пользователей и возвращает массив, в котором ключ это год рождения, а значение это количество мужчин, родившихся в этот год.
-function getMenCountByYear(array $array)
-{
-  $result = [];
-  $sum = 0;
-  $count = $array[0];
- foreach ($array as $arrays) {
-   $b = date("Y", strtotime($arrays['birthday']));
-  //  print_r($b);
-  // $male = 'male';
-   if ($arrays['gender'] === 'male') {
-     $sum += 1;
-  
-   }
-     $result[$b] = $sum / $b;  
- }
-return $result;
-}
-print_r(getMenCountByYear([
-    ['name' => 'Bronn', 'gender' => 'male', 'birthday' => '1973-03-23'],
-    ['name' => 'Reigar', 'gender' => 'male', 'birthday' => '1973-11-03'],
-    ['name' => 'Eiegon',  'gender' => 'male', 'birthday' => '1963-11-03'],
-    ['name' => 'Sansa', 'gender' => 'female', 'birthday' => '2012-11-03'],
-    ['name' => 'Jon', 'gender' => 'male', 'birthday' => '1980-11-03'],
-    ['name' => 'Robb','gender' => 'male', 'birthday' => '1980-05-14'],
-    ['name' => 'Tisha', 'gender' => 'female', 'birthday' => '2012-11-03'],
-    ['name' => 'Rick', 'gender' => 'male', 'birthday' => '2012-11-03'],
-    ['name' => 'Joffrey', 'gender' => 'male', 'birthday' => '1999-11-03'],
-    ['name' => 'Edd', 'gender' => 'male', 'birthday' => '1973-11-03']
-]));
-// $b = date("Y", strtotime($str));
-  #   1973 => 3,
-#     1963 => 1,
-#     1980 => 2,
-#     2012 => 1,
-#     1999 => 1
-print_r("\n");
-// function getMenCountBy(array $users)
-// {
-//     $menfolk = array_filter($users, fn($user) => $user['gender'] === 'male');
- 
-//     $years = array_map(fn($user) => date('Y', strtotime($user['birthday'])), $menfolk);
- 
-//     return array_reduce($years, function ($acc, $year) {
-//         if (!array_key_exists($year, $acc)) {
-//             $acc[$year] = 1;
-//         } else {
-//             $acc[$year] += 1;
-//         }
- 
-//         return $acc;
-//     }, []);
-// }
-// print_r(getMenCoun([
-//     ['name' => 'Bronn', 'gender' => 'male', 'birthday' => '1973-03-23'],
-//     ['name' => 'Reigar', 'gender' => 'male', 'birthday' => '1973-11-03'],
-//     ['name' => 'Eiegon',  'gender' => 'male', 'birthday' => '1963-11-03'],
-//     ['name' => 'Sansa', 'gender' => 'female', 'birthday' => '2012-11-03'],
-//     ['name' => 'Jon', 'gender' => 'male', 'birthday' => '1980-11-03'],
-//     ['name' => 'Robb','gender' => 'male', 'birthday' => '1980-05-14'],
-//     ['name' => 'Tisha', 'gender' => 'female', 'birthday' => '2012-11-03'],
-//     ['name' => 'Rick', 'gender' => 'male', 'birthday' => '2012-11-03'],
-//     ['name' => 'Joffrey', 'gender' => 'male', 'birthday' => '1999-11-03'],
-//     ['name' => 'Edd', 'gender' => 'male', 'birthday' => '1973-11-03']
-// ]));
-print_r("\n");
-//Реализуйте функцию getFreeDomainsCount, которая принимает на вход список емейлов, а возвращает количество емейлов, расположенных на каждом бесплатном домене. Список бесплатных доменов хранится в константе FREE_EMAIL_DOMAINS.
-// const FREE_EMAIL_DOMAINS = [
-//     'gmail.com', 'yandex.ru', 'hotmail.com'
-// ];
-// function getFreeDomainsCount($email)
-// {
-// 	$result = [];
-// 	foreach ($email as $value) {
-// 		$name = explode('@', $value);
-// 		$filename = array_key_last($name);
-// 		if (in_array($filename, FREE_EMAIL_DOMAINS)) {
-// 			$result[$filename] += 1;
-// 	}
-// }
-// 	return $result;
-// }
-// print_r(getFreeDomainsCount([
-//     'info@gmail.com',
-//     'info@yandex.ru',
-//     'info@hotmail.com',
-//     'mk@host.com',
-//     'support@hexlet.io',
-//     'key@yandex.ru',
-//     'sergey@gmail.com',
-//     'vovan@gmail.com',
-//     'vovan@hotmail.com'
-//  ]));
-//is_file - проверяет что переданный путь это реально существующий файл
-//pathinfo - позволяет извлекать расширение из имени файла
-//basename - извлекает имя файла из полного пути 
-//Реализуйте функцию getFreeDomainsCount, которая принимает на вход список емейлов, а возвращает количество емейлов, расположенных на каждом бесплатном домене. Список бесплатных доменов хранится в константе FREE_EMAIL_DOMAINS.
-// const FREE_EMAIL_DOMAINS = [
-//     'gmail.com', 'yandex.ru', 'hotmail.com'
-// ];
-// function getFreeDomainsC($email)
-// {
-// 	// $one = array_map(fn($mail) => explode('@', $mail)[1], $email);
-// 	// $two = array_filter($one, fn($domain) => in_array($domain, FREE_EMAIL_DOMAINS));
-
-// 	// return array_reduce($two, function($fn, $value) {
-// 	// 	$fn[$value] = ($fn[$value] ?? 0) + 1;
-// 	// 		return $fn;
-// 	// }, []);
-// }
-// print_r(getFreeDomainsC([
-//     'info@gmail.com',
-//     'info@yandex.ru',
-//     'info@hotmail.com',
-//     'mk@host.com',
-//     'support@hexlet.io',
-//     'key@yandex.ru',
-//     'sergey@gmail.com',
-//     'vovan@gmail.com',
-//     'vovan@hotmail.com'
-//  ]));
-// print_r("\n");
-//  function getManWithLeastFriends($users)
-// {
-//   if (empty($users)) {
-//     return null;
-//   }
-//   return Collect/minValue($users, function ($user) {
-//     return count($user['friends']);
-//   });   
-// }
-// print_r(getManWithLeastFriends([
-//     ['name' => 'Tirion', 'friends' => [
-//         ['name' => 'Mira', 'gender' => 'female'],
-//         ['name' => 'Ramsey', 'gender' => 'male']
-//     ]],
-//     ['name' => 'Bronn', 'friends' => []],
-//     ['name' => 'Sam', 'friends' => [
-//         ['name' => 'Aria', 'gender' => 'female'],
-//         ['name' => 'Keit', 'gender' => 'female']
-//     ]],
-//     ['name' => 'Keit', 'friends' => []],
-//     ['name' => 'Rob', 'friends' => [
-//         ['name' => 'Taywin', 'gender' => 'male']
-//     ]],
-// ]));
-// $value = [3, 4];
-function without(array $items, ...$value)
-{
-    $filtered = array_filter($items, function ($item) use ($value) {
-        return !in_array($item, $value);
-       
-    });
-    #Сбрасываем ключи
-    return array_values($filtered);
-   
-}
-print_r(without(['wow', 3, 4, 10, 4, 'true'], null, 4));
-//[10, 'true']
-//Реализуйте функцию enlargeArrayImage, которая принимает изображение в виде двумерного массива и увеличивает его в два раза.
-// function Flatten(array $array)
-// {
-//     return Collection\flatten(
-//     array_map(fn($arr) => [$arr, $arr], $array)
-//     );
-// }
-// function enlargeArrayImage($array2)
-// {
-//     $name = array_map(fn($arr2) => Flatten($arr2), $array2);
-//     return Flatten($name);
-// }
-// print_r(enlargeArrayImage([
-//   ['*','*','*','*'],
-//   ['*',' ',' ','*'],
-//   ['*',' ',' ','*'],
-//   ['*','*','*','*']
-// ], [
-//   ['*','*','*','*'],
-//   ['*',' ',' ','*'],
-//   ['*',' ',' ','*'],
-//   ['*','*','*','*']
-// ]));
-//str_repeat
-print_r("\n");
-function factorial($number)
-{ 
-  return $number % 2 === 0;
-}
-function test($number)
-{
-  $result = factorial($number) ? 'yes' : 'no';
-  return $result;
-}
-print_r(test(11));
-//Реализуйте функцию findIndexOfNearest, которая принимает на вход массив чисел и искомое число. Задача функции — найти в массиве ближайшее число к искомому и вернуть его индекс в массиве.
-//Если в массиве содержится несколько чисел, одновременно являющихся ближайшими к искомому числу, то возвращается наименьший из индексов ближайших чисел.
-print_r("\n");
-function findIndexOfNearest(array $array, $num)
-{
-  // $car = $array[0];
- $name = array_reduce($array, function ($car, $arrays) use ($num) {
-    // print_r($car);
-    return $arrays <= $num? max($car, $arrays): min($car, $arrays);
-   return $name;
-  });
-  
-}
-print_r(findIndexOfNearest([2, 4, 8, 16, 32, 64, 128, 256, 512], 0));
-print_r("\n");
-$array = array(2, 4, 8, 16, 32, 64, 128, 256, 512);
-$count = 31;
-
-echo array_reduce($array, function ($car, $item) use ($count) {
-  // print_r("$car");
-    return $item <= $count? max($car, $item): min($car, $item); 
-});
-//Реализуйте функцию getSameParity, которая принимает на вход список и возвращает новый, состоящий из элементов, у которых такая же четность, как и у первого элемента входного списка.
-print_r("\n");
-function getSameParity($mass)
-{
-  $result = [];
- if ($mass[0] % 2 === 0) {
-   for ($i = 0; $i < count($mass); $i++) {
-     if ($mass[$i] % 2 === 0) {
-        $result[] = $mass[$i];
-     }
- } 
-} elseif ($mass[0] % 2 !== 0) {
-  foreach ($mass as $item) {
-    if ($item % 2 !== 0) {
-      $result[] = $item;
-    }
-  }
-}
-return $result; 
-}
-print_r(getSameParity([2, 0, 1, -3, 10, -2])); // [5, 1, -3]
-//Реализуйте функцию getSameParity, которая принимает на вход список и возвращает новый, состоящий из элементов, у которых такая же четность, как и у первого элемента входного списка.
-print_r("\n");
-print_r("\n");
-function getSameParit(array $mass)
-{
-  [$firstnum] = $mass;
-  // print_r($firstnum);
-  $ch = abs($firstnum) % 2;
-  $name = array_filter($mass, function ($num) use ($ch) {
-    return (abs($num) % 2) === $ch;
-  });
-  return array_values($name);
-}
-print_r(getSameParit([-1, 0, 1, -3, 10, -2])); // [5, 1, -3]
-print_r("\n");
-//Реализуйте функцию filterAnagrams(), которая находит все анаграммы слова. Функция принимает исходное слово и список для проверки (массив), а возвращает массив всех анаграмм. Если в списке слов отсутствуют анаграммы, то возвращается пустой массив.
-function filterAnagrams($value, array $mass)
-{
-  $result = [];
- $a = str_split(strtolower($value));
-    //  print_r($simvol);
-    $str = implode(' ', $mass);
-    $b = str_split($str);
-    foreach ($a as $key1 => $value1) {
-      //  print_r($value1);
-    foreach ($b as $key2 => $value2) {
-      if (in_array($value1, $b)) {
-        $result[] = $mass;
-      }
-      // } else {
-      //   return false;
-      // }
-    }
-  }
-  return $result;
-}
-print_r(filterAnagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
-
-
-function capitalize($text)
-{
-    $firstSymbol = strtoupper($text[0]);
-    $restSubstring = substr($text, 1);
-    return "{$firstSymbol}{$restSubstring}";
-}
-print_r(capitalize('hello'));
-//Для хорошего тестирования этой функции понадобится как минимум три теста:
-//Проверка, что функция возвращает нужное значение по существующему ключу (прямой тест на работоспособность)
-//Проверка на то, что возвращается значение по умолчанию, если ключа нет
-//Проверка на то, что возвращается значение по существующему ключу, даже если передано значение по умолчанию (пограничный случай)
-// if (get(['key' => 'value'], 'key') !== 'value') {
-//     throw new \Exception('Boom!');
-// }
- 
-// if (get([], 'key', 'default') !== 'default') {
-//     throw new \Exception('Boom!');
-// }
- 
-// if (get(['key' => 'value'], 'key', 'default') !== 'value') {
-//     throw new \Exception('Boom!');
-// }
-// if (get(['key' => 'value'], 'key' !== 'value' ) {
-//     throw new \Exception('Функция работает неверно!');
-// }
-
-// if (get([], 'key', 'default') !== 'default') {
-//     throw new \Exception('Функция работает неверно!');
-// }
-
-// if (get(['key' => 'value'], 'key', 'default') !== 'value' {
-//     throw new \Exception('Функция работает неверно!');
-// }
-
-// echo 'Все тесты пройдены!';
-
-//Напишите тесты для функции take(items, n), которая возвращает первые n элементов из массива:
-assert(take(items), n);
-print_r("\n");
-function reverseString($string)
-{
-    return implode(array_reverse(str_split($string)));
-}
-print_r( reverseString("hello"));
-print_r("\n");
-//Напишите тесты для функции fill($coll, $value, $start, $end), которая заполняет элементы массива переданным значением, начиная со старта и заканчивая (но не включая) конечной позицией. Функция меняет исходный массив!
-print_r("\n");
-$keys = array('foo', 5, 10, 'bar');
-$a = array_fill_keys($keys, 'banana');
-print_r($a);
-
-print_r("\n");
-// class Point {
-//   constructor(x, y) {
-//     this.x = x;
-//     this.y = y;
-//   }
-//Реализуйте функцию calculateDistance(), которая находит расстояние между двумя точками на плоскости.
-function calculateDistanc($a1, $a2) 
-{
-  if ($a1 && $a2) {
-    return sqrt((($a1[0] - $a2[0]) ** 2) + (($a1[1] - $a2[1]) ** 2));
-  }
-}
-$point1 = [0, 0];
-$point2 = [3, 4];
-print_r(calculateDistanc($point1, $point2)); //5
-
-print_r("\n");
-//решегия учителя
-function calculate($poin1, $poin2)
-{
-  $a = $poin1[0] - $poin2[0];
-  $b = $poin1[1] - $poin2[1];
-
-  return sqrt($a ** 2 + $b ** 2);
-}
-print_r(calculate([0, 0], [3, 4]));
-print_r("\n");
-//Реализуйте функцию getMidpoint(), которая находит точку посередине между двумя указанными точками
-function getMidpoint($a1, $a2)
-{
-  $one = ($a1['x'] + $a2['x']) / 2;
-  $two = ($a1['y'] + $a2['y']) / 2;
-  // print_r($two);
- return ['x' => $one, 'y' => $two];
- 
-}
-// $point1 = ['x' => -1, 'y' => 10];
-// $point2 = ['x' => 0, 'y' => -3];
-//x = (x1 + x2) / 2 и y = (y1 + y2) / 2.
-$point3 = getMidpoint(['x' => -1, 'y' => 10], ['x' => 0, 'y' => -3]);//'x' => -0.5, 'y' => 3.5
-print_r($point3); // => [ 'x' => 2, 'y' => 2 ]
-
-
-print_r("\n");
-
-//makeSegment(). Принимает на вход две точки и возвращает отрезок.
-// makeSegment(). Принимает на вход две точки и возвращает отрезок.
-// getMidpointOfSegment(). Принимает на вход отрезок и возвращает точку находящуюся на середине отрезка.
-// getBeginPoint(). Принимает на вход отрезок и возвращает точку начала отрезка.
-// getEndPoint(). Принимает на вход отрезок и возвращает точку конца отрезка.
-print_r("\n");
-function makeDescartesPoin($x, $y)
-{
-         $begin2 = ($y['y'] + $x['y']) / 2;
-         $begin1 = ($y['x'] + $x['x']) / 2;
-         return "{$begin1} {$begin2}";
-}
-$getBeginPoint1 = ['x' => 3, 'y' => 2];
-$getEndPoint2 = ['x' => 0, 'y' => 0];
-print_r(makeDescartesPoin($getBeginPoint1, $getEndPoint2));//(1.5, 1)
-print_r("\n");
-
-function makeSegment($x, $y)
-{
-    return ['beginPoint' => $x, 'endPoint' => $y];
-    // print_r($y['y']);
-}
-$point = makeSegment([3, 2], [2, 3]);
-// print_r($point);
-// print_r(makeSegment([3, 2], [0, 0]));
-function getBeginPoint($point)
-{
-    return $point['beginPoint'];
-    // print_r($point);
-}
-print_r(getBeginPoint($point));
-
-function getEndPoint($point)
-{
-    return $point['endPoint'];
-}
-print_r(getEndPoint($point));
-function getMidpointOfSegment($point) 
-{
-  $begin = getBeginPoint($point);
-  $end = getEndPoint($point);
-  
-        // $begin2 = (getX($begin) + getX($end)) / 2;
-        // $begin1 = (getY($begin) + getY($end)) / 2;
-        // return "{$begin1} {$begin2}";
-}
-// $getBeginPoint1 = ['x' => 3, 'y' => 2];
-// $getEndPoint2 = ['x' => 2, 'y' => 3];
-print_r(getMidpointOfSegment($point));//1.5, 1
-
-print_r("\n");
-// function makeSegment($x, $y)
-// {
-//     return [
-//         'x' => $x,
-//         'y' => $y
-//     ];
-//     // print_r($y['y']);
-// }
-// $point = makeSegment([3, 2], [2, 3]);
-// // print_r($point);
-// // print_r(makeSegment([3, 2], [0, 0]));
-// function getBeginPoint($point)
-// {
-//     return $point['x'];
-//     // print_r($point);
-// }
-// // print_r(getBeginPoint($point));
-
-// function getEndPoint($point)
-// {
-//     return $point['y'];
-// }
-// // print_r(getEndPoint($point));
-// function getMidpointOfSegment($point) 
-// {
-//   // print_r($point['y'][1]);
-  
-//         $begin2 = ($point['x'][1] + $point['y'][1]) / 2;
-//         $begin1 = ($point['x'][0] + $point['y'][0]) / 2;
-//         return "{$begin1} {$begin2}";
-// }
-// $getBeginPoint1 = ['x' => 3, 'y' => 2];
-// $getEndPoint2 = ['x' => 2, 'y' => 3];
-// print_r(getMidpointOfSegment($point));//1.5, 1
-print_r("\n");
-function makeUser($name, $birthday)
-{
-    return [
-        'name' => $name,
-        'birthday' => $birthday
+    public const OPTIONS = [
+        'separator' => '...',
+        'length' => 6,
     ];
-}
 
-function getAge($user)
-{
-    return calculateAge($user['birthday']);
+    // BEGIN (write your solution here)
+    private $options;
+    public function __construct(string $options = '')
+    {
+        $this->options = self::OPTIONS;
+        // print_r($this->options);
+    }
+    public function truncate(string $string)
+    {
+      
+      $str = '';
+      $i = 0;
+      while($i < $this->options['length']) {
+        $string1 = $string[$i];
+        // print_r($string);
+        $str = "{$str}{$string1}";
+        // print_r($str);
+       $i++;
+      }
+      // return $str . $this->options['separator'];
+    }
+    // END
 }
-
-function isAdult($user)
-{
-    return getAge($user) >= 18;
-}
-
-// Эта функция не является частью интерфейса абстракции User.
-// Она является "внутренней".
-function calculateAge($birthday)
-{
-    $secondsInYear = 31556926;
-    return floor((time() - strtotime($birthday)) / $secondsInYear);
-}
+$t = new Truncater();
+print_r($t->truncate('one two'));
 print_r("\n");
-function makeDecartPoint($x, $y)
+function ti($string, $val, $num) 
 {
-     return [
-         'angle' => atan2($y, $x),
-         'radius' => sqrt($x ** 2 + $y ** 2)
-     ];
+  $str = '';
+  for ($i = 0; $i < strlen($string); $i++) {
+    // $str = "{$string}";
+    // print_r($string[$i] - $num);
+  }
+  // return $str;
+  // return $str;
+  // return $str;
+  //  if (strlen($string) <= $num) {
+  //     return $string;
+  //   }
+  // $str = '';
+  // $i = 0;
+  // while( $i < $num) {
+  //   $str = "{$str}{$string[$i]}";
+  //   $i++;
+  // }
+  // return $str .  $val;
 }
-$point = makeDecartPoint(4, 8);
-print_r($point);
-function getAngle($point)
-{
-  return $point['angle'];
-}
-function getRadius($point)
-{
-  return $point['radius'];
-}
-function getX($point)
-{
-  return getRadius($point) * cos(getAngle($point));
-}
-print_r(getX($point));
-print_r("\n");
-function getY($point)
-{
-  return getRadius($point) * sin(getAngle($point));;
-}
-print_r(getY($point));
-//Получить x можно по формуле radius * cos(angle)
-//Получить y можно по формуле radius * sin(angle)
-// function makeUser($name, $birthday)
-// {
-//     return [
-//          'angle' => atan2($y, $x),
-//          'radius' => sqrt($x ** 2 + $y ** 2)
-//      ];
-// }
-
-// function getAge($point)
-// {
-//     return calculateAge($point['angle']);
-// }
-
-// function isAdult($point)
-// {
-//     return getAge($user) >= 18;
-// }
-
-// // Эта функция не является частью интерфейса абстракции User.
-// // Она является "внутренней".
-// function calculateAge($birthday)
-// {
-//     $secondsInYear = 31556926;
-//     return floor((time() - strtotime($birthday)) / $secondsInYear);
-// }
-print_r("\n");
-function makeRational($numer, $denom)
-{
-    return "{$numer}/{$denom}";
-}
-$rational = makeRational(10, 3);
-// print_r(makeRational(10, 3));
-function getNumer($rational)
-{
-    return explode('/', $rational)[0];
-    // print_r($rational);
-}
-print_r(getNumer($rational));
-
-function getDenom($rational)
-{
-    return explode('/', $rational)[1];
-}
-print_r(getDenom($rational));
-// print_r(makeRational(10, 3)); // => 10/3
-print_r("\n");
-function sum($rational1, $rational2)
-{
-
-}
-print_r(sum(4, 5));
-function printSum($rational1, $rational2)
-{
-    $rational3 = sum($rational1, $rational2);
-    // print_r($rational3);
-    $denom = getDenom($rational3);
-    $numer = getNumer($rational3);
-    echo "Denom: {$denom}";
-    echo "Numer: {$numer}";
-}
-print_r("\n");
-function mul($rational1, $rational2)
-{
-    return [
-        'numer' => $rational1['numer'] * $rational2['numer'],
-        'denom' => $rational1['denom'] * $rational2['denom']
-    ];
-}
-print_r(mul(4, 2));
-print_r("\n");
-//Реализуйте абстракцию (набор функций) для работы с прямоугольниками, стороны которого всегда параллельны осям. Прямоугольник может располагаться в любом месте координатной плоскости.
-//При такой постановке, достаточно знать только три параметра для однозначного задания прямоугольника на плоскости: координаты левой-верхней точки, ширину и высоту. Зная их, мы всегда можем построить прямоугольник одним единственным способом.
-function makeRectangle($point, $with, $hight)
-{
-  return [
-    'point' => $point,
-    'with' => $with,
-    'hight' => $hight
-  ];
-}
-// $p = makeDecartPoint(0, 1);
-// $rectanje = makeRectangle(2, 4, 5);
-
-// function getStartPoint($rectanje)
-// {
-//   return $rectanje['point'];
-// }
-// print_r(getStartPoint($rectanje));
-// function getWidth($rectanje)
-// {
-//   return $rectanje['with'];
-// }
-// print_r(getWidth($rectanje));
-// function getHeight($rectanje)
-// {
-//   return $rectanje['hight'];
-// }
-// print_r(getHeight($rectanje));
+print_r(ti('one two', '...', 6));
 // print_r("\n");
-// function containsOrigin($rectanje)
-// {
-//   $point1 = getStartPoint($rectanje);
-//   $point2 = makeDecartPoint(getX($point1) + getWidth($rectangle), getY($point1) - getHeight($rectangle));
-//   return getQuadrant($point1) === 2 && getQuadrant($point2) === 4;
-// }
-// print_r(containsOrigin($rectanje));
-// $num = makeRational(1, 2); // создали рациональное число "одна вторая"
-// $numer = getNumer($num); // 1
-// $denom = getDenom($num); // 2
-// print_r($denom);
-//makeDecartPoint
-
-//Реализуйте абстракцию для работы с рациональными числами включающую в себя следующие функции:
-// Конструктор makeRational - принимает на вход числитель и знаменатель, возвращает дробь.
-// Селектор getNumer - возвращает числитель
-// Селектор getDenom - возвращает знаменатель
-// Сложение add - складывает две переданные дроби
-// Вычитание sub - находит разность между двумя дробями
-function makeRation($num1, $num2)
-{
-  return "{$num1}/{$num2}";
-}
-$rational = makeRation(3, 9);//1, 3
-print_r($rational);
-print_r("\n");
-function getNume($rational)
-{
-  return $rational[0];
-}
-print_r(getNume($rational));
-// function getDeno($rational)
-// {
-//   return explode('/', $rational)[1];
-// }
-// function add($rational1, $rational2)
-// {
-//   return makeRation(
-//     getNume($rational1) * getNume($rational2),
-//     getDeno($rational1) * getDeno($rational2)
-//   );
-// }
-// print_r(add($rational1, $rational2));
-// function sub($rational1, $rational2)
-// {
-//   return makeRation(
-//     getNume($rational1) - getNume($rational2),
-//     getDeno($rational1) - getDeno($rational2)
-//   );
-// }
-// print_r((1, 10) * (4, 10));
-// print_r("\n");
-// $a = (3/9) + (9/3);
+// $a = strlen('one two');
 // print_r($a);
 print_r("\n");
-function makeRationa($num1, $num2)
+class Trunca
 {
-    $gcd = gcd($num1, $num2);
-    return ['num1' => $num1 / $gcd, 'num2' => $num2 / $gcd];
+    public const OPTIONS = [
+        'separator' => '...',
+        'length' => 6,
+    ];
+
+    // BEGIN (write your solution here)
+    private $options = [];
+    public function __construct($options = [])
+    {
+        $this->options = array_merge(self::OPTIONS, $options);
+        // print_r($this->options);
+    }
+    public function truncate(string $string, array $options = []) : string
+    {
+      $first = array_merge($this->options, $options);
+      if (strlen($string) <= $this->options['length']) {
+        return $string;
+      }
+      $two = substr($string, 0, $first['length']);
+      return "{$two}{$first['separator']}";
+    }
+    // END
 }
-function getNum($rational)
-{
-    return $rational['num1'];
-}
-function getDen($rational)
-{
-    return $rational['num2'];
-}
-function add($rational1, $rational2)
-{
-    return makeRationa(
-    getNum($rational1) * getDen($rational2) + getNum($rational2) * getDen($rational1),
-    getDen($rational1) * getDen($rational2)
-  );
-}
-function sub($rational1, $rational2)
-{
-    return makeRationa(
-    getNum($rational1) * getDen($rational2) - getNum($rational2) * getDen($rational1),
-    getDen($rational1) * getDen($rational2)
-  );
-}
+$t = new Trunca();
+print_r($t->truncate('one two'));
 print_r("\n");
-function fill($coll, $value, $begin = 0, $end = null)
+
+//преобразования типа
+class MyStd
 {
-  // $result = [];
-   $lench = count($coll);
-   $end = $end ?? $lench;
-   $beginnum = $begin >= $end ? $end : $begin;
-   $endnum = $end >= $lench ? $lench : $end;
-   for ($i = $beginnum; $i < $endnum; $i++) {
-     $coll[$i] = $value;
-   } 
-   return $coll;
+    private $properties = [];
+
+    public function __set($name, $value)
+    {
+        $this->properties[$name] = $value;
+    }
+
+    public function __get($name)
+    {
+        return $this->properties[$name];
+    }
+
+    // Для полноты полезно реализовать метод __isset
+    // https://php.net/manual/ru/language.oop5.overloading.php#object.isset
 }
 
-print_r(fill([1, 2, 3, 4], '*')); //1, '*', '*', 4
+$obj = new MyStd();
+$obj->key = 'value'; // __set($name, $value) где $name = 'key', а $value = 'value'
+$obj->key; // __get($name) где $name = 'key'
+
+print_r($obj);
 print_r("\n");
-//Реализуйте функцию removeFirstLevel(), которая принимает на вход дерево, и возвращает новое, элементами которого являются дети вложенных узлов (см. пример).
-function removeFirstLevel(array $array)
+//Реализуйте функцию toStd(), которая принимает на вход ассоциативный массив и возвращает объект типа stdClass такой же структуры. Выполните задачу, проставляя ключи и значения вручную без использования преобразования типа.
+function toStd(array $array)
 {
-  $result = [];
-  foreach($array as $key => $value) {
-    // print_r($value);
-    if ($key && $value) {
-      $result[] = $value;
-    } elseif (!$key && $value) {
-      unset($value);
+  $atd = new stdClass();
+  foreach ($array as $key => $value) {
+    $atd->$key = $value;
+  }
+  return $atd;
+}
+print_r(toStd(['key' => 'value',
+    'key2' => 'value2']));
+// $array = [
+//   'key1' => 'value1',
+//   'key2' => 'value2',
+//   '1' => '3'
+// ];
+print_r("\n");
+class Course
+{
+    private $name;
+
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+}
+$c = new Course('name');
+print_r($c->getName());
+//Реализуйте функцию compare($seq1, $seq2), которая сравнивает две строчки набранные в редакторе. Если они равны то возвращает true, иначе - false. Особенность строчек в том они могут содержать символ #, соответствующий нажатию клавиши Backspace. Она означает, что нужно стереть предыдущий символ: abd##a# превращается в a.
+// function S($string) 
+// {
+//   //инициализируем строчек;
+//   // $stack = new \Ds\Stack();
+//   //открывающие стеки
+//   $firstS = ['{', '[', '('];
+//   //закрывающие стеки
+//   $twoS = ['[]', '()', '{}'];
+//   for($i = 0; $i < strlen($string); $i++) {
+//     $curr = $stack2[$i];
+//     if (in_array($curr, $firstS)) {
+//       $stack->push($curr);
+//     } else {
+//       //Если элемент не входит в список открывающих, то считаем, что это закрывающий символ
+//       $pre = $stack->pop();
+//       //составляем из этих парочку
+//     $para = "{$stack}{$pre}";
+//     if (!in_array($curr, $twoS)) {
+//       return false;
+//     }
+//     };
+//   }
+//   return $twoS === [];
+// }
+// print_r(S('{}[]'));
+print_r("\n");
+class DeckOfCards
+{
+    private $array;
+    public function __construct($array)
+    {
+        $this->array = $array;
+        // print_r($this->array );
+    }
+    public function getShuffled()
+    {
+      $a = array_fill(0, 4, $this->array);
+      foreach($a  as $value) {
+        
+        print_r($value);
+      }
+      
+      // return $b;
+     
+  }
+}
+$d = new DeckOfCards([2, 3, 4]);
+print_r($d->getShuffled());
+print_r("\n");
+$fruits = ["lemon", "orange", "banana", "apple"];
+sort($fruits);
+print_r($fruits);
+// foreach ($fruits as $key => $val) {
+//     echo "fruits[" . $key . "] = " . $val . "\n";
+// }
+print_r("\n");
+$a = [1, 2, 4, 5];
+shuffle($a);
+print_r($b);
+print_r("\n");
+class Us{
+
+  private $id;
+  private $name;
+
+  public function __construct($id, $name)
+  {
+    $this->id = $id;
+    $this->name = $name;
+  }
+  public function GetsiS($user)
+  {
+    return $this->id === $user->id;
+  }
+}
+$u = new Us(2, 'g');
+$u1 = new Us(2, 'y');
+print_r($u->GetsiS($u1));
+print_r("\n");
+
+class Aress
+{
+    public function __construct($street, $house, $zipcode)
+    {
+        $this->street = $street;
+        $this->house = $house;
+        $this->zipcode = $zipcode;
+    }
+
+    public function toString()
+    {
+        return "{$this->street}, {$this->house}, {$this->zipcode}";
+    }
+}
+
+class Ut
+{
+    // Где-то здесь конструктор и другие методы
+
+    public function getAddress()
+    {
+        // Так как у нас объект-значение,
+        // то можно, не боясь, создавать его любое количество раз,
+        // но в случае необходимости можно этот процесс оптимизировать
+        return new Aress($this->street, $this->house, $this->zipcode);
+  }
+}
+// $user = new Ut();
+// // print_r($user);
+// print_r($user->getAddress()->toString());
+print_r("\n");
+class Time
+{
+    public function format($date) {
+        return (new DateTime())->setTimestamp($date)->format('d.m.y');
+    }
+}
+$date = new Time();
+$formattedDate = $date->format(time());
+print_r($formattedDate);
+
+// В данном упражнении вам предстоит реализовать класс Url, который позволяет извлекать из HTTP адреса, представленного строкой, его части.
+
+// Класс должен содержать конструктор и методы:
+
+// конструктор - принимает на вход HTTP адрес в виде строки.
+// getScheme() - возвращает протокол передачи данных (без двоеточия).
+// getHostName() - возвращает имя хоста.
+// getQueryParams() - возвращает параметры запроса в виде пар ключ-значение объекта.
+// getQueryParam() - получает значение параметра запроса по имени. Если параметр с переданным именем не существует, метод возвращает значение заданное вторым параметром (по умолчанию равно null).
+// equals($url) - принимает объект класса Url и возвращает результат сравнения с текущим объектом - true или false.
+print_r("\n");
+class Ur
+{
+  private $http;
+  private $massiv;
+
+  public function __construct(string $http)
+  {
+    $this->http = parse_url($http);
+    $this->massiv = [];
+    // print_r($this->http);
+
+    if (isset($this->http['query'])) {
+      parse_str($this->http['query'], $this->massiv);
+      // print_r($this->massiv);
     }
   }
-  return $result;
+  function getScheme()
+  {
+    return $this->http['scheme'];
+  }
+  function getHostName()
+  {
+    return $this->http['host'];
+  }
+  function getQueryParams()
+  {
+    return $this->massiv;
+ }
+ function getQueryParam($key, $defaultValue = null)
+ {
+   return $this->massiv[$key] ?? $defaultValue;
+ }
+ function equals(Ur $url)
+ {
+   return $this == $url;
+ }
 }
-print_r(removeFirstLevel([[5], 1, [3, 4]]));//[5, 3, 4]
-//[1, [3, 2], 3, 5, 130, [1, [550, 10]]];
+$o = new Ur('http://yandex.ru:80?key=value&key2=value2');
+$o1 = new Ur('http://yandex.ru:80?key=value&key2=value2');
+print_r($o->getScheme());
 print_r("\n");
-// print_r('sdsvsdfv');
+print_r($o->getHostName());
 print_r("\n");
-// function array_flatten($tree, $depth = 0)
+print_r($o->getQueryParams());
+print_r($o->getQueryParam('key2', 'lala'));
+print_r("\n");
+print_r($o->equals(new Ur('http://yandex.ru:80?key=value&key2=value2')));
+// $result = [];
+// $str = 'http://yandex.ru:80?key=value&key2=value2';
+
+// $b = substr($str, 30);
+// if (stristr($str, 'key')) {
+//   $result[] = 'value2';
+// }
+// print_r($result);
+// $ito = explode('=', $b);
+// // print_r($ito);
+// print_r("\n");
+//           //   $str1 = substr($str, 20, -12);
+//           //   $sr2 = substr($str, 30);
+//           //  $ito = explode('=', $str1);
+//           //  $it2 = explode('=', $sr2);
+//           //  $first = array_merge($ito, $it2);
+//           //  $result = [$first[0] => $first[1], $first[2] => $first[3]];
+//           //  print_r($result);
+
+// $a = 'a' == 'a';
+// $ages = [3,5,8,7];
+// $age = $ages[3] ?? 5; // 5 - значение по умолчанию
+// // Эквивалентно этой строчке
+// // $age = isset($ages[3]) ? $ages[3] : 5;
+// print_r($age);
+
+// class Url
 // {
-//     $result = [];
-//     foreach ($tree as $key => $value) {
-//       // print_r($value);
-//         if ($depth >= 0 && is_array($value)) {
-//           // print_r($value);
-//             $value = array_flatten($value, $depth > 1 ? $depth - 1 : 0 - $depth);
-//             // print_r($value);
-//             $result = array_merge($result, $value);
-//             // print_r($result);
-//         } else {
-//             $result[] = $value;
+//     private $http;
+//     private $queryParams;
+ 
+//     public function __construct($http)
+//     {
+//         $this->http = parse_url($http);
+//         $this->queryParams = [];
+//         print_r($this->http);
+ 
+//         if (isset($this->http['query'])) {
+//             parse_str($this->http['query'], $this->queryParams);
+//             // print_r($this->queryParams);
 //         }
 //     }
-//     return $result;
+  
+//     public function getScheme()
+//     {
+//         return $this->http['scheme'];
+//     }
+  
+//     public function getHostName()
+//     {
+//         return $this->http['host'];
+//     }
+  
+//     public function getQueryParams()
+//     {
+//         return $this->queryParams;
+//     }
+  
+//     public function getQueryParam($key, $defaultValue = null)
+//     {
+//         return $this->queryParams[$key] ?? $defaultValue;
+//         // print_r($this->queryParams[$key]);
+//     }
+  
+//     public function equals(Url $url)
+//     {
+//         return $this == $url;
+//         // print_r($url);
+//     }
 // }
-// print_r(array_flatten([[5], 1, [3, 4]], $depth = 0));
+// $o = new Url('http://yandex.ru:80?key=value&key2=value2');
+// $o1 = new Url('http://yandex.ru:80?key=value&key2=value2');
+// print_r($o->getScheme());
+// print_r("\n");
+// print_r($o->getHostName());
+// print_r("\n");
+// print_r($o->getQueryParams());
+// print_r($o->getQueryParam('key2fre', 'lala'));
+// print_r("\n");
+// print_r($o->equals(new Url('http://yandex.ru:80?key=value')));
 print_r("\n");
-// function key_compare_func($key1, $key2)
-// {
-//     if ($key1 == $key2)
-//     print_r($key1);
-//         return 0;
-//     // else if ($key1 > $key2)
-//     //     return 1;
-//     // else
-//     //     return -1;
-// }
-
-// $array1 = array('blue'  => 1, 'red'  => 2, 'green'  => 3, 'purple' => 4);
-// $array2 = array('green' => 5, 'blue' => 6, 'yellow' => 7, 'cyan'   => 8);
-
-// var_dump(array_intersect_ukey($array1, $array2, 'key_compare_func'));
-// $tree = mkdir('etc', [
-//   touch('bashrc'),
-//   mkdir('consul', [
-//     touch('config.json'),
-//   ]),
-// ], ['key' => 'value']);
+function normalize($arrCity)
+{
+    // print_r(array_column($arrCity, 'country'));
+    $a = array_merge($arrCity);
+    $b = array_unique($a['country']);
+    var_dump($b);
+}
+//array_column
+print_r(normalize([
+    [
+        'name' => 'istambul',
+        'country' => 'turkey'
+    ],
+    [
+        'name' => 'Moscow ',
+        'country' => ' Russia'
+    ],
+    [
+        'name' => 'iStambul',
+        'country' => 'tUrkey'
+    ],
+    [
+        'name' => 'antalia',
+        'country' => 'turkeY '
+    ],
+    [
+        'name' => 'samarA',
+        'country' => '  ruSsiA'
+    ],
+]));
